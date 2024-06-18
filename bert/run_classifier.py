@@ -111,7 +111,7 @@ class bertProcessor(DataProcessor): #bert
         random.seed(42)
         self.D = [[], [], []]
         for sid in range(3):
-            with open("data/"+["train.json", "dev.json", "test.json"][sid], "r", encoding="utf8") as f:
+            with open("data_v2/en/data/"+["train.json", "dev.json", "test.json"][sid], "r", encoding="utf8") as f:
                 data = json.load(f)
             if sid == 0:
                 random.shuffle(data)
@@ -168,7 +168,7 @@ class bertf1cProcessor(DataProcessor): #bert (conversational f1)
         random.seed(42)
         self.D = [[], [], []]
         for sid in range(1, 3):
-            with open("data/"+["dev.json", "test.json"][sid-1], "r", encoding="utf8") as f:
+            with open("data_v2/en/data/"+["dev.json", "test.json"][sid-1], "r", encoding="utf8") as f:
                 data = json.load(f)
             for i in range(len(data)):
                 for j in range(len(data[i][1])):
@@ -250,7 +250,7 @@ class bertsProcessor(DataProcessor): #bert_s
         random.seed(42)
         self.D = [[], [], []]
         for sid in range(3):
-            with open("data/"+["train.json", "dev.json", "test.json"][sid], "r", encoding="utf8") as f:
+            with open("data_v2/en/data/"+["train.json", "dev.json", "test.json"][sid], "r", encoding="utf8") as f:
                 data = json.load(f)
             if sid == 0:
                 random.shuffle(data)
@@ -334,7 +334,7 @@ class bertsf1cProcessor(DataProcessor): #bert_s (conversational f1)
         random.seed(42)
         self.D = [[], [], []]
         for sid in range(1, 3):
-            with open("data/"+["dev.json", "test.json"][sid-1], "r", encoding="utf8") as f:
+            with open("data_v2/en/data/"+["dev.json", "test.json"][sid-1], "r", encoding="utf8") as f:
                 data = json.load(f)
             for i in range(len(data)):
                 for j in range(len(data[i][1])):
