@@ -50,6 +50,7 @@ args = parser.parse_args()
 
 def convert():
     # Initialise PyTorch model
+    print("Building PyTorch model from configuration: {}".format(args.bert_config_file))
     config = BertConfig.from_json_file(args.bert_config_file)
     model = BertModel(config)
 
